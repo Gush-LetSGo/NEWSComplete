@@ -2,6 +2,7 @@
  * 前端登录业务类
  * @author singwa
  */
+
 var login = {
     check : function() {
         // 获取登录页面中的用户名 和 密码
@@ -15,7 +16,7 @@ var login = {
             dialog.error('密码不能为空');
         }
 
-        var url = "/admin.php?c=login&a=check";
+        var url = '/'+projectRoot+"/admin.php?c=login&a=check";
         var data = {'username':username,'password':password};
         // 执行异步请求  $.post
         $.post(url,data,function(result){
@@ -23,10 +24,8 @@ var login = {
                 return dialog.error(result.message);
             }
             if(result.status == 1) {
-                return dialog.success(result.message, '/admin.php?c=index');
+                return dialog.success(result.message, '/'+projectRoot+'/admin.php?c=index');
             }
-
         },'JSON');
-
     }
 }

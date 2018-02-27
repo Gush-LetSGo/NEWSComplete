@@ -25,7 +25,7 @@
         </div>
 
         <div class="row">
-            <form action="/admin.php" method="get">
+            <form action="__ROOT__/admin.php" method="get">
                 <div class="col-md-3">
                     <div class="input-group">
                         <span class="input-group-addon">推荐位</span>
@@ -110,10 +110,10 @@
 <!-- /#wrapper -->
 <script>
     var SCOPE = {
-        'edit_url' : '/admin.php?c=positioncontent&a=edit',
-        'set_status_url' : '/admin.php?c=positioncontent&a=setStatus',
-        'add_url' : '/admin.php?c=positioncontent&a=add',
-        'listorder_url' : '/admin.php?c=positioncontent&a=listorder',
+        'edit_url' : '/'+projectRoot+'/admin.php?c=positioncontent&a=edit',
+        'set_status_url' : '/'+projectRoot+'/admin.php?c=positioncontent&a=setStatus',
+        'add_url' : '/'+projectRoot+'/admin.php?c=positioncontent&a=add',
+        'listorder_url' : '/'+projectRoot+'/admin.php?c=positioncontent&a=listorder',
     }
 
 </script>

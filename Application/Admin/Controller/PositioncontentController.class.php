@@ -39,11 +39,11 @@ class PositioncontentController extends CommonController {
                     $res = D("News")->find($_POST['news_id']);
                     if($res && is_array($res)) {
                         $_POST['thumb'] = $res['thumb'];
+                        return show(0,'图片不为空');
                     }
                 }else{
                     return show(0,'图片不能为空');
                 }
-
             }
             if($_POST['id']) {
               return $this->save($_POST);

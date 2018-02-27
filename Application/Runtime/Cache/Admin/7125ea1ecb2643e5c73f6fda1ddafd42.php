@@ -11,26 +11,27 @@
 
     <title>sing后台管理平台</title>
     <!-- Bootstrap Core CSS -->
-    <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/NEWSComplete/Public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/Public/css/sb-admin.css" rel="stylesheet">
+    <link href="/NEWSComplete/Public/css/sb-admin.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="/Public/css/plugins/morris.css" rel="stylesheet">
+    <link href="/NEWSComplete/Public/css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/Public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/Public/css/sing/common.css" />
-    <link rel="stylesheet" href="/Public/css/party/bootstrap-switch.css" />
-    <link rel="stylesheet" type="text/css" href="/Public/css/party/uploadify.css">
+    <link href="/NEWSComplete/Public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/NEWSComplete/Public/css/sing/common.css" />
+    <link rel="stylesheet" href="/NEWSComplete/Public/css/party/bootstrap-switch.css" />
+    <link rel="stylesheet" type="text/css" href="/NEWSComplete/Public/css/party/uploadify.css">
 
     <!-- jQuery -->
-    <script src="/Public/js/jquery.js"></script>
-    <script src="/Public/js/bootstrap.min.js"></script>
-    <script src="/Public/js/dialog/layer.js"></script>
-    <script src="/Public/js/dialog.js"></script>
-    <script type="text/javascript" src="/Public/js/party/jquery.uploadify.js"></script>
+    <script src="/NEWSComplete/Public/js/jquery.js"></script>
+    <script src="/NEWSComplete/Public/js/bootstrap.min.js"></script>
+    <script src="/NEWSComplete/Public/js/dialog/layer.js"></script>
+    <script src="/NEWSComplete/Public/js/dialog.js"></script>
+    <script src="/NEWSComplete/Public/js/admin/config.js"></script>
+    <script type="text/javascript" src="/NEWSComplete/Public/js/party/jquery.uploadify.js"></script>
 
 </head>
 
@@ -42,116 +43,28 @@
 <div id="wrapper">
 
   <?php
- $navs = D("Menu")->getAdminMenus(); $index = 'index'; ?>
+ $navs = D("Menu")->getAdminMenus(); $username = getLoginUsername(); foreach($navs as $k=>$v) { if($v['c'] == 'admin' && $username != 'admin') { unset($navs[$k]); } } $index = 'index'; ?>
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
+    
     <a class="navbar-brand" >singcms内容管理平台</a>
   </div>
   <!-- Top Menu Items -->
   <ul class="nav navbar-right top-nav">
+    
+    
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-      <ul class="dropdown-menu message-dropdown">
-        <li class="message-preview">
-          <a href="#">
-            <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-              <div class="media-body">
-                <h5 class="media-heading"><strong>John Smith</strong>
-                </h5>
-                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                <p>Lorem ipsum dolor sit amet, consectetur...</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="message-preview">
-          <a href="#">
-            <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-              <div class="media-body">
-                <h5 class="media-heading"><strong>John Smith</strong>
-                </h5>
-                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                <p>Lorem ipsum dolor sit amet, consectetur...</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="message-preview">
-          <a href="#">
-            <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-              <div class="media-body">
-                <h5 class="media-heading"><strong>John Smith</strong>
-                </h5>
-                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                <p>Lorem ipsum dolor sit amet, consectetur...</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="message-footer">
-          <a href="#">Read All New Messages</a>
-        </li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-      <ul class="dropdown-menu alert-dropdown">
-        <li>
-          <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-        </li>
-        <li>
-          <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-        </li>
-        <li>
-          <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-        </li>
-        <li>
-          <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-        </li>
-        <li>
-          <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-        </li>
-        <li>
-          <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-        </li>
-        <li class="divider"></li>
-        <li>
-          <a href="#">View All</a>
-        </li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo getLoginUsername()?> <b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li>
-          <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+          <a href="/NEWSComplete/admin.php?c=admin&a=personal"><i class="fa fa-fw fa-user"></i> 个人中心</a>
         </li>
-        <li>
-          <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-        </li>
+       
         <li class="divider"></li>
         <li>
-          <a href="/admin.php?c=login&a=loginout"><i class="fa fa-fw fa-power-off"></i> 退出</a>
+          <a href="/NEWSComplete/admin.php?c=login&a=loginout"><i class="fa fa-fw fa-power-off"></i> 退出</a>
         </li>
       </ul>
     </li>
@@ -160,10 +73,10 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav nav_list">
       <li <?php echo (getActive($index)); ?>>
-        <a href="/admin.php"><i class="fa fa-fw fa-dashboard"></i> 首页</a>
+        <a href="/NEWSComplete/admin.php"><i class="fa fa-fw fa-dashboard"></i> 首页</a>
       </li>
       <?php if(is_array($navs)): $i = 0; $__LIST__ = $navs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$navo): $mod = ($i % 2 );++$i;?><li <?php echo (getActive($navo["c"])); ?>>
-        <a href="<?php echo (getAdminMenuUrl($navo)); ?>"><i class="fa fa-fw fa-bar-chart-o"></i> <?php echo ($navo["name"]); ?></a>
+        <a href="/NEWSComplete<?php echo (getAdminMenuUrl($navo)); ?>"><i class="fa fa-fw fa-bar-chart-o"></i> <?php echo ($navo["name"]); ?></a>
       </li><?php endforeach; endif; else: echo "" ;endif; ?>
 
     </ul>
@@ -180,7 +93,7 @@
 
 		  <ol class="breadcrumb">
 			<li>
-			  <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=positioncontent">推荐位内容管理</a>
+			  <i class="fa fa-dashboard"></i>  <a href="/NEWSComplete/admin.php?c=positioncontent">推荐位内容管理</a>
 			</li>
 			<li class="active">
 			  <i class="fa fa-edit"></i> 添加推荐位内容
@@ -261,10 +174,10 @@
 </div>
 <script>
   var SCOPE = {
-	'save_url' : '/admin.php?c=positioncontent&a=add',
-	'jump_url' : '/admin.php?c=positioncontent&a=index',
-	'ajax_upload_image_url' : '/admin.php?c=image&a=ajaxuploadimage',
-	'ajax_upload_swf' : '/Public/js/party/uploadify.swf'
+	'save_url' : '/'+projectRoot+'/NEWSComplete/admin.php?c=positioncontent&a=add',
+	'jump_url' : '/'+projectRoot+'/admin.php?c=positioncontent&a=index',
+	'ajax_upload_image_url' : '/'+projectRoot+'/admin.php?c=image&a=ajaxuploadimage',
+	'ajax_upload_swf' : '/NEWSComplete/Public/js/party/uploadify.swf'
   };
   var thumb = "<?php echo ($vo["thumb"]); ?>";
   if(thumb) {
@@ -272,9 +185,9 @@
   }
 </script>
 <!-- /#wrapper -->
-<script type="text/javascript" src="/Public/js/admin/form.js"></script>
-<script src="/Public/js/admin/image.js"></script>
-<script src="/Public/js/admin/common.js"></script>
+<script type="text/javascript" src="/NEWSComplete/Public/js/admin/form.js"></script>
+<script src="/NEWSComplete/Public/js/admin/image.js"></script>
+<script src="/NEWSComplete/Public/js/admin/common.js"></script>
 
 
 
